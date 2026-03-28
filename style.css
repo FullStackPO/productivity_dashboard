@@ -76,3 +76,16 @@ section{
     text-shadow: 0 0 50px greenyellow;
     scale: 1.1;
 }
+
+.full-elem{
+    height: 100%;
+    width: 100%;
+    background-color: brown;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 10;
+    text-align: center;
+}
