@@ -87,5 +87,23 @@ section{
     left: 0;
     display: none;
     z-index: 10;
-    text-align: center;
+}
+
+.nav{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back{
+    background-color: red;
+    padding: 12px 15px;
+    font-family: sans-serif;
+    font-weight: 900;
+    border: none;
+    border-radius: 50%;
+}
+.back:hover{
+    box-shadow: 0 0 20px whitesmoke;
 }
