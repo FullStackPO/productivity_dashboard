@@ -1,11 +1,15 @@
 import motivation from './motivation.js'
 
+let api_key = ''; //Your_api_key
+
 let chngbtn = document.querySelector('#chngtheme');
 let main = document.querySelector('main');
 let allElem = document.querySelectorAll('.elem');
 let afelem = document.querySelectorAll('.full-elem');
 let backbtn = document.querySelectorAll('.back');
 let motive = document.querySelector('#motive');
+let wcity = document.querySelector('#city');
+let temp = document.querySelector('#temp');
 
 //change theme
 let btn = true;
@@ -42,3 +46,14 @@ function getLine(){
 }
 
 setInterval(getLine, 5000);
+
+//weather update
+async function weatherUpdate(city){
+    let raw = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`);
+    let data = await raw.json();
+
+    wcity.textContent = data.name || 'Delhi';
+    temp.textContent = `${data.main.temp}°C`;
+} 
+
+weatherUpdate('Delhi')
