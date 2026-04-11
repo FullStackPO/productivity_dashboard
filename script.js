@@ -57,3 +57,17 @@ async function weatherUpdate(city){
 } 
 
 weatherUpdate('Delhi')
+
+//Todo Work
+
+let form = document.querySelector('.addTask form');
+let taskInput = document.querySelector('.addTask form input');
+let detailsInput = document.querySelector('.addTask form textarea');
+let showTitle = document.querySelector('.showTitle');
+let showDetails = document.querySelector('.showDetails');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    showTitle.innerHTML = taskInput.value;
+    showDetails.innerHTML = detailsInput.value;
+})

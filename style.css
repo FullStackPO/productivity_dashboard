@@ -169,6 +169,11 @@ section{
     gap: 20px;
     padding: 20px;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    gap:20px
+}
 
 .addTask{
     background: rgba(255, 255, 255, 0.1);
@@ -209,6 +214,7 @@ section{
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    width: 100%;
 }
 
 .addTask button:active{
