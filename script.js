@@ -51,7 +51,7 @@ function updateClock() {
   minutes = minutes < 10 ? "0" + minutes : minutes;
   seconds = seconds < 10 ? "0" + seconds : seconds;
 
-  const time = `${hours}:${minutes}:${seconds}`;
+  const time = `Time : ${hours}:${minutes}:${seconds}`;
   document.getElementById("clock").textContent = time;
 }
 
@@ -80,14 +80,43 @@ weatherUpdate('Delhi')
 
 //Todo Work
 
-let form = document.querySelector('.addTask form');
-let taskInput = document.querySelector('.addTask form input');
-let detailsInput = document.querySelector('.addTask form textarea');
-let showTitle = document.querySelector('.showTitle');
-let showDetails = document.querySelector('.showDetails');
+let allTask = JSON.parse(localStorage.getItem('tasks')) || [];
+
+let form = document.querySelector('.addTask form')
+let name = document.querySelector('.addTask input')
+let detail = document.querySelector('.addTask textarea')
+let showTask = document.querySelector('.todocontent .showTask')
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    showTitle.innerHTML = taskInput.value;
-    showDetails.innerHTML = detailsInput.value;
+
+    let inpval = name.value;
+    let txtval = detail.value;
+
+    allTask.push({inpval, txtval});
+    localStorage.setItem('tasks', JSON.stringify(allTask));
+
+    renderTask();
+
+    name.value = '';
+    detail.value = '';
 })
+
+function renderTask(){
+    let clutter = '';
+
+    allTask.forEach(function(elem){
+        clutter += `
+        <div>
+        <details>
+        <summary class="showTitle">${elem.inpval}</summary>
+        <p class="showDetails">${elem.txtval}</p>
+        </details>
+        </div>
+        `
+    })
+
+    showTask.innerHTML = clutter;
+}
+
+renderTask();
