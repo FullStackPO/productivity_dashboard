@@ -105,12 +105,13 @@ form.addEventListener('submit', function(e){
 function renderTask(){
     let clutter = '';
 
-    allTask.forEach(function(elem){
+    allTask.forEach(function(elem, idx){
         clutter += `
         <div>
         <details>
         <summary class="showTitle">${elem.inpval}</summary>
         <p class="showDetails">${elem.txtval}</p>
+        <button class='deleteButton' data-index="${idx}">Task Completed</button>
         </details>
         </div>
         `
@@ -118,5 +119,16 @@ function renderTask(){
 
     showTask.innerHTML = clutter;
 }
+
+showTask.addEventListener('click', function(e){
+    if(e.target.classList.contains('deleteButton')){
+        let index = e.target.getAttribute('data-index');
+
+        allTask.splice(index, 1);
+        localStorage.setItem('tasks', JSON.stringify(allTask));
+
+        renderTask();
+    }
+})
 
 renderTask();
