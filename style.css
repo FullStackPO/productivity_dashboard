@@ -259,3 +259,27 @@ form{
     font-size: 14px;
     opacity: 0.9;
 }
+
+.showTask::-webkit-scrollbar {
+    width: 5px;
+}
+
+.showTask::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.showTask::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.showTask::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00f2fe, #4facfe);
+}
+
+.showTask {
+    scrollbar-width: thin;
+    scrollbar-color: #00c6ff rgba(255, 255, 255, 0.05);
+}
