@@ -295,3 +295,13 @@ form{
 .deleteButton:active{
     transform: scale(0.95);
 }
+
+.day-planner{
+    display: flex;
+    flex-wrap: wrap;
+    gap:50px;
+    align-items: center;
+    justify-items: center;
+    padding: 50px;
+}
+    
