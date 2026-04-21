@@ -141,7 +141,7 @@ function dailyPlanner() {
 
     var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
 
-    var hours = Array.from({ length: 18 }, (_, idx) => `${6 + idx}:00 - ${7 + idx}:00`)
+    var hours = Array.from({ length: 20 }, (_, idx) => `${4 + idx}:00 - ${5 + idx}:00`)
 
 
     var wholeDaySum = ''
