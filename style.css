@@ -318,3 +318,62 @@ form{
     margin-top: 10px;
     font-size: 30px;
 }
+
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:40px;
+}
+.inner-timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 200px;
+    margin-top: 50px;
+    gap:20px;
+}
+.min{
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px white;
+}
+.pomo-start{
+    padding: 2px;
+    color: white;
+    background-color: green;
+    border-radius:10px;
+    font-weight: bold;
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    border: none;
+    box-shadow: 0 0 10px white;
+}
+.pomo-stop{
+    padding: 2px;
+    color: white;
+    background-color: red;
+    border-radius:10px;
+    font-weight: bold;
+    height: 50px;
+    width: 150px;
+    font-size: 20px;
+    border: none;
+    box-shadow: 0 0 10px white;  
+}
+
+.pomo-button{
+    display: flex;
+    gap:30px
+}
+
+.pomo-start:active{
+    transform: scale(0.90);
+}
+
+.pomo-stop:active{
+    transform: scale(0.90);
+}
