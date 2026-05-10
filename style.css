@@ -340,6 +340,12 @@ form{
     border-radius: 10px;
     box-shadow: 0 0 20px white;
 }
+.sec{
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px white;
+}
 .pomo-start{
     padding: 2px;
     color: white;

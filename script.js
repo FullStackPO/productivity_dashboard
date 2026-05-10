@@ -171,3 +171,49 @@ function dailyPlanner() {
 }
 
 dailyPlanner()
+
+//pomodoro 
+
+const minEl = document.querySelector('.min');
+const secEl = document.querySelector('.sec');
+
+const startBtn = document.querySelector('.pomo-start');
+const stopBtn = document.querySelector('.pomo-stop');
+
+let minutes = 25;
+let seconds = 0;
+let timer = null;
+
+minEl.textContent = String(minutes).padStart(2, '0');
+secEl.textContent = String(seconds).padStart(2, '0');
+
+startBtn.addEventListener('click', () => {
+
+    if (timer !== null) return;
+
+    timer = setInterval(() => {
+
+        if (seconds === 0) {
+            if (minutes === 0) {
+                clearInterval(timer);
+                timer = null;
+                alert("Take a Break🙋🏻‍♂️");
+                return;
+            }
+
+            minutes--;
+            seconds = 59;
+        } else {
+            seconds--;
+        }
+
+        minEl.textContent = String(minutes).padStart(2, '0');
+        secEl.textContent = String(seconds).padStart(2, '0');
+
+    }, 1000);
+});
+
+stopBtn.addEventListener('click', () => {
+    clearInterval(timer);
+    timer = null;
+});
