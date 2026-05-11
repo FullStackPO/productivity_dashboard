@@ -217,3 +217,17 @@ stopBtn.addEventListener('click', () => {
     clearInterval(timer);
     timer = null;
 });
+
+const restartBtn = document.querySelector('.pomo-restart');
+
+restartBtn.addEventListener('click', () => {
+
+    clearInterval(timer);
+    timer = null;
+
+    minutes = 25;
+    seconds = 0;
+
+    minEl.textContent = String(minutes).padStart(2, '0');
+    secEl.textContent = String(seconds).padStart(2, '0');
+});
