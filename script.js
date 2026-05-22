@@ -143,26 +143,25 @@ function dailyPlanner() {
 
     var hours = Array.from({ length: 20 }, (_, idx) => `${4 + idx}:00 - ${5 + idx}:00`)
 
-
     var wholeDaySum = ''
+
     hours.forEach(function (elem, idx) {
 
         var savedData = dayPlanData[idx] || ''
 
-        wholeDaySum = wholeDaySum + `<div class="day-planner-time">
-    <p>${elem}</p>
-    <input id=${idx} type="text" placeholder="..." value=${savedData}>
-</div>`
+        wholeDaySum += `
+        <div class="day-planner-time">
+            <p>${elem}</p>
+            <input id="${idx}" type="text" placeholder="..." value="${savedData}">
+        </div>`
     })
 
     dayPlanner.innerHTML = wholeDaySum
-
 
     var dayPlannerInput = document.querySelectorAll('.day-planner input')
 
     dayPlannerInput.forEach(function (elem) {
         elem.addEventListener('input', function () {
-            console.log('hello');
             dayPlanData[elem.id] = elem.value
 
             localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
