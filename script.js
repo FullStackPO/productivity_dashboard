@@ -167,6 +167,13 @@ function dailyPlanner() {
             localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
         })
     })
+
+    var clearBtn = document.querySelector('.clear-btn')
+
+    clearBtn.addEventListener('click', function () {
+        localStorage.removeItem('dayPlanData')
+        location.reload()
+    })
 }
 
 dailyPlanner()
