@@ -171,9 +171,14 @@ function dailyPlanner() {
     var clearBtn = document.querySelector('.clear-btn')
 
     clearBtn.addEventListener('click', function () {
+
+    var isConfirmed = confirm('Are you sure you want to clear all planner data?')
+
+    if (isConfirmed) {
         localStorage.removeItem('dayPlanData')
         location.reload()
-    })
+    }
+})
 }
 
 dailyPlanner()
